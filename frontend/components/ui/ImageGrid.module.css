@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  background-color: white;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.image {
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoomed {
+  z-index: 10;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.zoomed .image {
+  transform: scale(1.2);
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
