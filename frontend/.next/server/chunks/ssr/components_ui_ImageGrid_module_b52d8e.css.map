@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/components/ui/ImageGrid.module.css"],"sourcesContent":[".grid {\n  display: grid;\n  background-color: white;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 1rem;\n  padding: 1rem;\n}\n\n.imageWrapper {\n  position: relative;\n  aspect-ratio: 1 / 1;\n  overflow: hidden;\n  cursor: pointer;\n  transition: all 0.3s ease-in-out;\n}\n\n.image {\n  object-fit: contain;\n  transition: transform 0.3s ease-in-out;\n}\n\n.zoomed {\n  z-index: 10;\n  grid-column: span 2;\n  grid-row: span 2;\n}\n\n.zoomed .image {\n  transform: scale(1.2);\n  object-fit: contain;\n}\n\n@media (max-width: 768px) {\n  .grid {\n    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));\n  }\n}\n\n"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;;;;;;;;AAQA;;;;;AAKA;;;;;;AAMA;;;;;AAKA;EACE"}},
-    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

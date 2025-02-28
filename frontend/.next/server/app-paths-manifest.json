@@ -1,10 +1,10 @@
 {
-  "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/localizacao/page": "app/localizacao/page.js",
-  "/contato/page": "app/contato/page.js",
-  "/sobre/page": "app/sobre/page.js",
-  "/maquinas/page": "app/maquinas/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/parceiros/page": "app/parceiros/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/contato/page": "app/contato/page.js",
+  "/localizacao/page": "app/localizacao/page.js",
+  "/maquinas/page": "app/maquinas/page.js",
+  "/page": "app/page.js",
+  "/parceiros/page": "app/parceiros/page.js",
+  "/sobre/page": "app/sobre/page.js"
 }
