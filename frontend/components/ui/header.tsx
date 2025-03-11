@@ -6,25 +6,28 @@ import Navbar from "./navbar"
 
 const TopBar = () => {
   return (
-    <div className="bg-gray-300 w-full flex md:justify-center py-5">
+    <div className="bg-gray-600 w-full flex md:justify-center py-5">
       <div className="md:container md:h-45 md:flex md:align-center md:justify-between md:flex-row flex-col">
         <div className="md:h-full flex md:justify-start align-center md:flex-1 justify-center">
-          <Link href="/">
-            <Image
-              src="/maqvendas.png"
-              width="200"
-              height="100"
-              alt="Official Logo MaqVendas website"
-            />
-          </Link>
+          <div className="bg-white md:h-full rounded-sm px-4 py-2">
+            <Link href="/">
+              <Image
+                className=""
+                src="/maqvendas.png"
+                width="200"
+                height="100"
+                alt="Official Logo MaqVendas website"
+              />
+            </Link>
+          </div>
         </div>
         <div className="w-100 flex flex-col gap-2 py-2 md:py-0">
           <div className="flex  gap-2 md:justify-between justify-start">
             <Icons.location width="35" className="hidden md:block" />
             <div className="flex flex-col align-center justify-center text-gray-600 uppercase text-base px-2 md:px-0">
-              <span className="inline">Rua Padre Roque Continillo, Quadra 13 lote 06.
+              <span className="inline text-white">Rua Padre Roque Continillo, Quadra 13 lote 06.
               </span>
-              <span>
+              <span className="text-white">
                 Parque trindade 2, Aparecida de Goiânia, GO.
               </span>
             </div>
