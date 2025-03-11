@@ -19,16 +19,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.zoomed {
-  z-index: 10;
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.zoomed .image {
-  transform: scale(1.2);
-  object-fit: contain;
-}
 
 @media (max-width: 768px) {
   .grid {
