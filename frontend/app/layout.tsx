@@ -23,7 +23,6 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body >
-        <Header />
         {children}
       </body>
     </html>

@@ -6,69 +6,62 @@ import Navbar from "./navbar"
 
 const TopBar = () => {
   return (
-    <div className="bg-gray-600 w-full flex md:justify-center py-5">
-      <div className="md:container md:h-45 md:flex md:align-center md:justify-between md:flex-row flex-col">
-        <div className="md:h-full flex md:justify-start align-center md:flex-1 justify-center">
-          <div className="bg-white md:h-full rounded-sm px-4 py-2">
-            <Link href="/">
+    <div className="bg-neutral-900 w-full py-4">
+      <div className="max-w-[1200px] mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo Section */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="block">
               <Image
-                className=""
                 src="/maqvendas.png"
-                width="200"
-                height="100"
+                width={180}
+                height={90}
                 alt="Official Logo MaqVendas website"
+                className="transition-opacity hover:opacity-90 invert brightness-0"
               />
             </Link>
           </div>
-        </div>
-        <div className="w-100 flex flex-col gap-2 py-2 md:py-0">
-          <div className="flex  gap-2 md:justify-between justify-start">
-            <Icons.location width="35" className="hidden md:block" />
-            <div className="flex flex-col align-center justify-center text-gray-600 uppercase text-base px-2 md:px-0">
-              <span className="inline text-white">Rua Padre Roque Continillo, Quadra 13 lote 06.
-              </span>
-              <span className="text-white">
-                Parque trindade 2, Aparecida de Goiânia, GO.
-              </span>
+
+          {/* Contact and Social Section */}
+          <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-auto">
+            {/* Address */}
+            <div className="flex items-center gap-3 text-neutral-300 text-sm">
+              <Icons.location className="w-6 h-6 text-yellow-500" />
+              <div className="flex flex-col">
+                <span>Rua Padre Roque Continillo, Quadra 13 lote 06</span>
+                <span>Parque trindade 2, Aparecida de Goiânia, GO</span>
+              </div>
             </div>
-          </div>
-          <div className="border-b-2 border-gray-400" />
-          <div className="flex gap-2 flex-col md:flex-row px-4 md:px-0">
-            <div className="flex md:flex-2 flex-1 align-center gap-2 w-full">
+
+            {/* Buttons */}
+            <div className="flex gap-3 w-full md:w-auto">
               <a
-                className="inline-block bg-green-400 px-6 py-2 md:px-2 rounded-full w-full"
                 href="https://api.whatsapp.com/send?phone=5562983011001&text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site%20*MaqVendas*%20https%3A%2F%2Fwww.maqvendas.com.br"
                 target="_blank"
+                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-yellow-500 text-neutral-900 px-6 py-2.5 rounded-full font-medium hover:bg-yellow-400 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
               >
-                <div className="flex align-center text-black-900 uppercase text-base gap-2  justify-center font-bold items-center mr-7">
-                  <Icons.whatsapp width="35" />
-                  Fale Conosco
-                </div>
+                <Icons.whatsapp className="w-5 h-5" />
+                <span>Fale Conosco</span>
               </a>
-            </div>
-            <div className="md:flex-1 w-full">
               <a
                 target="_blank"
-                className="inline-block bg-white px-6 md:px-2 py-2 rounded-full w-full"
                 href="https://www.instagram.com/_maqvendas/"
+                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-neutral-800 text-white px-6 py-2.5 rounded-full font-medium hover:bg-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
               >
-                <div className="flex align-center text-black-900 uppercase text-base gap-4 md:gap-6  justify-center font-bold items-center gap-4 md:gap-0">
-                  <Icons.instagram width="35" />
-                  Seguir
-                </div>
+                <Icons.instagram className="w-5 h-5" />
+                <span>Seguir</span>
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 
-
 const Header = () => {
   return (
-    <header className="w-full">
+    <header className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100">
       <TopBar />
       <Navbar />
     </header>

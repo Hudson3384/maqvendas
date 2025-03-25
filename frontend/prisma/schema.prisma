@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String     @id @default(cuid())
+  name        String
+  slug        String     @unique
+  description String?
+  image       String?
+  machines    Machine[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Spec {
+  id        String   @id @default(cuid())
+  name      String
+  value     String
+  machine   Machine  @relation(fields: [machineId], references: [id])
+  machineId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Machine {
+  id          String     @id @default(cuid())
+  title       String
+  slug        String     @unique
+  description String     @db.Text
+  price       Float
+  year        Int
+  brand       String
+  model       String
+  serial      String?
+  featured    Boolean    @default(false)
+  images      Image[]
+  specs       Spec[]
+  category    Category   @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Image {
+  id        String   @id @default(cuid())
+  url       String
+  alt       String?
+  machine   Machine  @relation(fields: [machineId], references: [id])
+  machineId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+

@@ -1,5 +1,4 @@
 import Image from "next/image"
-import styles from "./ImageGrid.module.css"
 
 const images = [
   {
@@ -60,22 +59,25 @@ const images = [
 ]
 
 export default function ImageGrid() {
-
-
   return (
-    <div className={styles.grid}>
-      {images.map((src) => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
+      {images.map((image) => (
         <div
-          key={src.url}
-          className={`${styles.imageWrapper}`}
+          key={image.url}
+          className="w-full max-w-[200px] aspect-[3/2] relative group"
         >
-          <a href={src.url} target="_blank">
+          <a 
+            href={image.url} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full"
+          >
             <Image
-              src={src.src || "/placeholder.svg"}
-              alt={src.alt}
+              src={image.src}
+              alt={image.alt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className={styles.image}
+              className="object-contain p-2 transition-all duration-300 group-hover:scale-105"
             />
           </a>
         </div>
