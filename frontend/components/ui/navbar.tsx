@@ -53,7 +53,7 @@ export default function Navbar() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="fixed right-4 top-4 z-50 rounded-full hover:bg-neutral-100"
+              className="absolute right-4 top-4 z-50 rounded-full hover:bg-neutral-100"
             >
               <MenuIcon className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>

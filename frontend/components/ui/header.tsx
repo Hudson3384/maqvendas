@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 import { Icons } from "./icons"
 import Image from "next/image"
@@ -6,7 +5,7 @@ import Navbar from "./navbar"
 
 const TopBar = () => {
   return (
-    <div className="bg-neutral-900 w-full py-4">
+    <div className="bg-neutral-900 w-full py-4 block">
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo Section */}
@@ -34,11 +33,11 @@ const TopBar = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-3 w-full md:w-auto">
+            <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
               <a
                 href="https://api.whatsapp.com/send?phone=5562983011001&text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site%20*MaqVendas*%20https%3A%2F%2Fwww.maqvendas.com.br"
                 target="_blank"
-                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-yellow-500 text-neutral-900 px-6 py-2.5 rounded-full font-medium hover:bg-yellow-400 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-yellow-500 text-neutral-900 px-6 py-2.5 rounded-full font-medium hover:bg-yellow-400 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
               >
                 <Icons.whatsapp className="w-5 h-5" />
                 <span>Fale Conosco</span>
@@ -46,7 +45,7 @@ const TopBar = () => {
               <a
                 target="_blank"
                 href="https://www.instagram.com/_maqvendas/"
-                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-neutral-800 text-white px-6 py-2.5 rounded-full font-medium hover:bg-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-neutral-800 text-white px-6 py-2.5 rounded-full font-medium hover:bg-neutral-700 transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
               >
                 <Icons.instagram className="w-5 h-5" />
                 <span>Seguir</span>
@@ -61,9 +60,14 @@ const TopBar = () => {
 
 const Header = () => {
   return (
-    <header className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100">
+    <header className="w-full block bg-white/80 backdrop-blur-md border-b border-neutral-100 relative z-50">
+      <div className="md:hidden">
+        <Navbar />
+      </div>
       <TopBar />
-      <Navbar />
+      <div className="hidden md:block">
+        <Navbar />
+      </div>
     </header>
   )
 }

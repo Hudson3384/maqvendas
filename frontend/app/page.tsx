@@ -10,22 +10,24 @@ export default function Home() {
       <Header />
     <div className="min-h-screen bg-neutral-50">
       {/* Hero Section */}
-      <section className="relative h-[90vh] w-full overflow-hidden">
+      <section className="h-screen w-full overflow-hidden relative">
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/main-image.webp"
             alt="MaqVendas Pavimentação"
             fill
-            className="object-cover"
+            className="object-cover w-full h-full"
             priority
+            sizes="100vw"
+            quality={100}
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/90 to-neutral-900/70" />
         </div>
 
         {/* Content */}
-        <div className="relative h-full max-w-[1200px] mx-auto px-4 flex flex-col justify-center">
+        <div className="relative h-full max-w-[1200px] mx-auto px-4 flex flex-col justify-center z-10">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-6">
               Especialista em pavimentação asfáltica
